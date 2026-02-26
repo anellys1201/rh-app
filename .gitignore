@@ -1,0 +1,26 @@
+###################
+# REACT
+###################
+recursos-humanos-react/node_modules
+recursos-humanos-react/build
+recursos-humanos-react/.env
+
+###################
+# SPRING BOOT
+###################
+recursos-humanos-spring/target
+*.log
+*.class
+
+###################
+# IDE
+###################
+.idea
+.vscode
+*.iml
+
+###################
+# OS
+###################
+.DS_Store
+Thumbs.db
