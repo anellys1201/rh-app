@@ -26,7 +26,12 @@ public class EmpleadoServicio implements IEmpleadoServicio
     }
 
     @Override
-    public Empleado guardarEmpleado(Empleado empleado) {
+    public Empleado guardarEmpleado(Empleado empleado)
+    {
+        if(empleado.getBienes() != null)
+        {
+            empleado.getBienes().forEach(detalle -> detalle.setEmpleado(empleado));
+        }
         return empleadoRepositorio.save(empleado);
     }
 
