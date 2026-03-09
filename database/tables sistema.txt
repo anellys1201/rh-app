@@ -1,0 +1,38 @@
+CREATE TABLE `bien` (
+   `id_bien` int NOT NULL AUTO_INCREMENT,
+   `descripcion` varchar(255) DEFAULT NULL,
+   `nombre` varchar(255) DEFAULT NULL,
+   PRIMARY KEY (`id_bien`)
+ )
+
+
+CREATE TABLE `detalle_bien` (
+   `consec` int NOT NULL AUTO_INCREMENT,
+   `comentario` varchar(255) DEFAULT NULL,
+   `id_bien` int DEFAULT NULL,
+   `id_empleado` int DEFAULT NULL,
+   PRIMARY KEY (`consec`),
+   KEY `FKtei20cnfc2cn7n6c6qjrua2j6` (`id_bien`),
+   KEY `FKbk3vn7scnkkvua2wudmw31s3y` (`id_empleado`),
+   CONSTRAINT `FKbk3vn7scnkkvua2wudmw31s3y` FOREIGN KEY (`id_empleado`) REFERENCES `empleado` (`id_empleado`),
+   CONSTRAINT `FKtei20cnfc2cn7n6c6qjrua2j6` FOREIGN KEY (`id_bien`) REFERENCES `bien` (`id_bien`)
+ )
+
+
+CREATE TABLE `empleado` (
+   `id_empleado` int NOT NULL AUTO_INCREMENT,
+   `departamento` varchar(255) DEFAULT NULL,
+   `nombre` varchar(255) DEFAULT NULL,
+   `sueldo` double DEFAULT NULL,
+   `documento` varchar(255) DEFAULT NULL,
+   PRIMARY KEY (`id_empleado`)
+ ) 
+
+
+CREATE TABLE `usuarios` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `password` varchar(255) DEFAULT NULL,
+   `username` varchar(255) DEFAULT NULL,
+   PRIMARY KEY (`id`)
+ )
+tramite_geof_pr
